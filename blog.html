@@ -113,3 +113,59 @@
         loadArticles();
     });
 </script>
+<style>
+    /* Style pour l'étiquette de la liste déroulante */
+#level-select + label {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: white; /* Couleur du texte de l'étiquette */
+    display: block;
+    margin-bottom: 5px;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(214, 62, 62, 0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+.card:hover {
+    transform: translateY(-5px);
+}
+.card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.card-content {
+    padding: 20px;
+}
+.card-content h2 {
+    margin-top: 0;
+    font-size: 1.5em;
+}
+.card-content p {
+    color: #555;
+}
+.back-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #5271ff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.back-button:hover {
+    background-color: #4059d5;
+}
+
+@media (min-width: 767px) {
+    .card img {
+        height: 200px; /* Hauteur fixe pour les écrans larges */
+        object-fit: cover; /* Remplit le conteneur en conservant les proportions */
+    }
+}
+</style>
