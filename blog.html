@@ -114,58 +114,43 @@
     });
 </script>
 <style>
-    /* Style pour l'étiquette de la liste déroulante */
-#level-select + label {
-    font-size: 1.1em;
-    font-weight: 600;
-    color: white; /* Couleur du texte de l'étiquette */
-    display: block;
-    margin-bottom: 5px;
-}
-
+/* Styles pour la carte d'article */
 .card {
     background-color: #ffffff;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(214, 62, 62, 0.1);
-    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 15px; /* Réduit la marge inférieure */
     overflow: hidden;
     transition: transform 0.3s ease;
+    max-width: 90%; /* Réduit la largeur maximale */
+    margin-left: auto; /* Centre la carte */
+    margin-right: auto; /* Centre la carte */
 }
+
 .card:hover {
     transform: translateY(-5px);
 }
+
+/* Styles pour l'image de la carte */
 .card img {
     width: 100%;
-    height: auto;
+    height: auto; /* Ajuste la hauteur automatiquement */
     display: block;
-}
-.card-content {
-    padding: 20px;
-}
-.card-content h2 {
-    margin-top: 0;
-    font-size: 1.5em;
-}
-.card-content p {
-    color: #555;
-}
-.back-button {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #5271ff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-}
-.back-button:hover {
-    background-color: #4059d5;
+    object-fit: cover; /* Remplit le conteneur en conservant les proportions */
 }
 
-@media (min-width: 767px) {
+/* Styles pour les écrans plus larges (ordinateurs) */
+@media (min-width: 768px) {
     .card img {
         height: 200px; /* Hauteur fixe pour les écrans larges */
-        object-fit: cover; /* Remplit le conteneur en conservant les proportions */
     }
 }
+
+/* Styles pour les écrans plus petits (mobiles) */
+@media (max-width: 767px) {
+    .card img {
+        height: 150px; /* Hauteur réduite pour les écrans plus petits */
+    }
+}
+
 </style>
