@@ -54,52 +54,62 @@
             <p style="color: #5271ff;">&copy; 2024 InforFacile. Tous droits réservés.</p>
         </footer>
     </div>
-
-    <!-- Script pour le menu réactif -->
-    <script>
-        function toggleMenu() {
-            var menu = document.getElementById("menu");
-            menu.classList.toggle("active");
-        }
-    </script>
-
-    <!-- Script pour charger et filtrer les articles -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const levelSelect = document.getElementById('level-select');
-            let articles = [];
-
-            function loadArticles() {
-                fetch('articles.json')
-                    .then(response => response.json())
-                    .then(data => {
-                        articles = data;
-                        displayArticles();
-                    })
-                    .catch(error => console.error('Erreur lors du chargement des articles:', error));
-            }
-
-            function displayArticles() {
-                const selectedLevel = levelSelect.value;
-                const articleList = document.getElementById('article-list');
-                articleList.innerHTML = '';
-
-                const filteredArticles = selectedLevel === 'all'
-                    ? articles
-                    : articles.filter(article => article.level === selectedLevel);
-
-                filteredArticles.forEach(article => {
-                    const listItem = document.createElement('li');
-                    listItem.innerHTML = `<a href="${article.url}">${article.title}</a><p>${article.description}</p>`;
-                    articleList.appendChild(listItem);
-                });
-            }
-
-            levelSelect.addEventListener('change', displayArticles);
-
-            // Initialisation
-            loadArticles();
-        });
-    </script>
 </body>
 </html>
+<!-- Script pour le menu réactif -->
+<script>
+    function toggleMenu() {
+        var menu = document.getElementById("menu");
+        menu.classList.toggle("active");
+    }
+</script>
+
+<!-- Script pour charger et filtrer les articles -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const levelSelect = document.getElementById('level-select');
+        const articleList = document.getElementById('article-list');
+        let articles = [];
+
+        function loadArticles() {
+            fetch('articles.json')
+                .then(response => response.json())
+                .then(data => {
+                    articles = data;
+                    displayArticles();
+                })
+                .catch(error => console.error('Erreur lors du chargement des articles:', error));
+        }
+
+        function displayArticles() {
+            const selectedLevel = levelSelect.value;
+            articleList.innerHTML = '';
+
+            const filteredArticles = selectedLevel === 'all'
+                ? articles
+                : articles.filter(article => article.level === selectedLevel);
+
+            filteredArticles.forEach(article => {
+                const card = document.createElement('div');
+                card.className = 'card';
+
+                const cardContent = `
+                    <img src="${article.banner}" alt="Bannière de l'article">
+                    <div class="card-content">
+                        <h2>${article.title}</h2>
+                        <p>${article.description}</p>
+                        <a href="${article.url}" class="back-button">Lire l'article</a>
+                    </div>
+                `;
+                card.innerHTML = cardContent;
+
+                articleList.appendChild(card);
+            });
+        }
+
+        levelSelect.addEventListener('change', displayArticles);
+
+        // Initialisation
+        loadArticles();
+    });
+</script>
