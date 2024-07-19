@@ -1,0 +1,24 @@
+[
+    {
+        "title": "Introduction à l'informatique",
+        "slug": "introduction-informatique",
+        "description": "Comprendre les concepts de base de l'informatique.",
+        "url": "articles/introduction-informatique.html",
+        "level": "débutant"
+    },
+    {
+        "title": "Structures de données avancées",
+        "slug": "structures-de-donnees-avancees",
+        "description": "Approfondissez vos connaissances sur les structures de données.",
+        "url": "articles/structures-de-donnees-avancees.html",
+        "level": "avancé"
+    },
+    {
+        "title": "Programmation Orientée Objet",
+        "slug": "programmation-orientee-objet",
+        "description": "Introduction à la programmation orientée objet.",
+        "url": "articles/programmation-orientee-objet.html",
+        "level": "intermédiaire"
+    }
+
+]

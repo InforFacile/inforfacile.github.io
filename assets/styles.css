@@ -108,3 +108,41 @@ footer {
         cursor: pointer;
     }
 }
+
+/* Style de la liste déroulante pour sélectionner le niveau */
+#level-select {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1em;
+    padding: 10px;
+    border-radius: 50px;
+    border: 1px solid #ccc; /* Couleur du bord */
+    background-color: #f5f5f5; /* Couleur de fond */
+    color: #5271ff; /* Couleur du texte */
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    width: 200px; /* Ajuste la largeur selon tes besoins */
+    margin-top: 10px;
+}
+
+/* Effet de survol pour la liste déroulante */
+#level-select:hover {
+    border-color: #3498db; /* Couleur du bord au survol */
+    background-color: #e1f5fe; /* Couleur de fond au survol */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Effet de focus pour la liste déroulante */
+#level-select:focus {
+    border-color: #3498db; /* Couleur du bord au focus */
+    background-color: #e1f5fe; /* Couleur de fond au focus */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Style pour l'étiquette de la liste déroulante */
+#level-select + label {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: white; /* Couleur du texte de l'étiquette */
+    display: block;
+    margin-bottom: 5px;
+}
